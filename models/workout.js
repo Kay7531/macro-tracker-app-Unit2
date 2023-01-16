@@ -2,14 +2,14 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const activitySchema = new Schema({
+const workoutSchema = new Schema({
     name: {
         type: String,
     },
     duration: {
         type: Number,
     },
-    calLost: {
+    calsLost: {
         type: Number,
     },
     date: {
@@ -19,8 +19,8 @@ const activitySchema = new Schema({
     timestamps:true
 })
 
-const Activity = mongoose.model('Activity', activitySchema)
+const Workout = mongoose.model('Activity', workoutSchema)
 
 export {
-    Activity
+    Workout
 }

@@ -22,7 +22,7 @@ import'./config/passport.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as foodsRouter } from './routes/foods.js'
-
+import { router as activitiesRouter } from './routes/activities.js'
 // create the express app
 const app = express()
 
