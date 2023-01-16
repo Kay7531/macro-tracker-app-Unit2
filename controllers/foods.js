@@ -49,6 +49,19 @@ function show(req, res) {
       }) 
 }
 
+function deleteFood(req, res) {
+    Food.findByIdAndDelete(req.params.id)
+    .then(food => {
+        res.redirect('/foods')
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/movies")
+      })
+}
+
+
+
 
 export {
   index,
@@ -56,4 +69,5 @@ export {
   newFood as new,
   create,
   show,
+  deleteFood as delete,
 }

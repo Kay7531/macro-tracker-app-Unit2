@@ -16,6 +16,10 @@ router.get('/new', foodsCtrl.new)
 router.post('/', foodsCtrl.create)
 // GET localhost:3000/foods/:id
 router.get('/:id', foodsCtrl.show)
+//DELETE localhost:3000/foods/:id
+router.delete('/:id', foodsCtrl.delete)
+// GET localhost:3000/foods/:id/edit
+router.get("/:id/edit", foodsCtrl.edit)
 
 
 
