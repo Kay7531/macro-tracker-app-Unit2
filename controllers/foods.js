@@ -35,6 +35,19 @@ function create(req, res) {
       })
 }
 
+function show(req, res) {
+    Food.findById(req.params.id)
+    .then(food => {
+        res.render('foods/show', {
+            title: 'Food Item Detail',
+            food: food,
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/")
+      }) 
+}
 
 
 export {
@@ -42,4 +55,5 @@ export {
   choiceFood as choice,
   newFood as new,
   create,
+  show,
 }
