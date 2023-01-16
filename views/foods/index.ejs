@@ -1,0 +1,35 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/foods/index.css" />
+
+<%- include('../partials/nav') %>
+
+<main>
+ <h1>Daily Food Log</h1>
+ <table>
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Carbs</th>
+            <th>Protien</th>
+            <th>Fat</th>
+            <th>Serving</th>
+            <th>Total Calories</th>
+        </tr>
+    </thead>
+ 
+ <tbody>
+    <% foods.forEach(food => { %>
+    <tr>
+        <td><%= food.name %></td>
+        <td><%= food.netCarbs %> g </td>
+        <td><%= food.protein %> g </td>
+        <td><%= food.fat %> g </td>
+        <td><%= food.serving %></td>
+        <td><%= food.totalCal %> cals</td>
+    </tr>
+    <% }) %>
+ </tbody>
+</table>
+</main>
+
+<%- include("../partials/footer") %>

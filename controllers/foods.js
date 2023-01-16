@@ -27,7 +27,7 @@ function newFood(req, res) {
 function create(req, res) {
     Food.create(req.body)
     .then(food => {
-        res.redirect('/foods/new')
+        res.redirect('/foods')
     })
     .catch(err => {
         console.log(err)

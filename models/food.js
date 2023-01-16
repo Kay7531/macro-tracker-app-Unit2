@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 const foodSchema = {
     name: {
         type: String,
+        required: true,
     },
     totalCal: {
         type: Number,
@@ -16,6 +17,9 @@ const foodSchema = {
         type: Number,
     },
     fat: {
+        type: Number,
+    },
+    serving: {
         type: Number,
     },
     date: {
