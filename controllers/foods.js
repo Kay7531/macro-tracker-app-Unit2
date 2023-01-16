@@ -60,7 +60,20 @@ function deleteFood(req, res) {
       })
 }
 
+function edit(req, res) {
+    Food.findById(req.params.id)
+    .then(food => {
+        res.render("foods/edit", {
+            food,
+            title: "Edit Food"
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/")
+      })
 
+}
 
 
 export {
@@ -70,4 +83,5 @@ export {
   create,
   show,
   deleteFood as delete,
+  edit,
 }
