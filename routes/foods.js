@@ -20,6 +20,8 @@ router.get('/:id', foodsCtrl.show)
 router.delete('/:id', foodsCtrl.delete)
 // GET localhost:3000/foods/:id/edit
 router.get("/:id/edit", foodsCtrl.edit)
+//PUT localhost:3000/foods/:id
+router.put('/:id', foodsCtrl.update)
 
 
 

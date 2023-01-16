@@ -75,6 +75,20 @@ function edit(req, res) {
 
 }
 
+function update(req, res) {
+  for (let key in req.body) {
+    if(req.body[key] === "") delete req.body[key]
+  }
+  Food.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(food => {
+    res.redirect(`/foods/${food._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+} 
+
 
 export {
   index,
@@ -84,4 +98,5 @@ export {
   show,
   deleteFood as delete,
   edit,
+  update,
 }
