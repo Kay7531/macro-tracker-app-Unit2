@@ -1,0 +1,24 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/foods/show.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>Food Item: </div>
+    <div><%= food.name %></div>
+    <div>Carbs: </div>
+    <div><%= food.netCarbs %></div>
+    <div>Protein: </div>
+    <div><%= food.protein %></div>
+    <div> Fats: </div>
+    <div><%= food.fat %></div>
+    <div>Servings:</div>
+    <div><%= food.serving %></div>
+    <div>Total Calories: </div>
+    <div><%= food.totalCal %></div>
+
+  </section>
+</main>
+  
+<%- include('../partials/footer') %>
