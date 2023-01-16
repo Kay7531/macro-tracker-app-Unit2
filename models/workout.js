@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 const workoutSchema = new Schema({
     name: {
         type: String,
+        required: true,
     },
     duration: {
         type: Number,
@@ -19,7 +20,7 @@ const workoutSchema = new Schema({
     timestamps:true
 })
 
-const Workout = mongoose.model('Activity', workoutSchema)
+const Workout = mongoose.model('Workout', workoutSchema)
 
 export {
     Workout

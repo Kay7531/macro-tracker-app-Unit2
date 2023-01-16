@@ -6,6 +6,18 @@ function newWorkout(req, res)  {
     })
 }
 
+function create(req, res) {
+    Workout.create(req.body)
+    .then(workout => {
+        res.redirect('/workouts/')
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/workouts/')
+    })
+}
+
 export {
     newWorkout as new,
+    create,
 }
