@@ -14,6 +14,8 @@ router.get('/choice', foodsCtrl.choice)
 router.get('/new', foodsCtrl.new)
 //POST localhost:3000/foods
 router.post('/', foodsCtrl.create)
+// GET localhost:3000/foods/:id
+router.get('/:id', foodsCtrl.show)
 
 
 
