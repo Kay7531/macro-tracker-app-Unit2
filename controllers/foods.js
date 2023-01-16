@@ -24,7 +24,16 @@ function newFood(req, res) {
       title: "Manually log Food Item",
     })
   }
-
+function create(req, res) {
+    Food.create(req.body)
+    .then(food => {
+        res.redirect('/foods/new')
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/foods/new')
+      })
+}
 
 
 
@@ -32,4 +41,5 @@ export {
   index,
   choiceFood as choice,
   newFood as new,
+  create,
 }
