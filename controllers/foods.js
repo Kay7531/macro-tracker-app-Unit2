@@ -19,7 +19,17 @@ function choiceFood(req, res) {
   })
 }
 
+function newFood(req, res) {
+    res.render("foods/new", {
+      title: "Manually log Food Item",
+    })
+  }
+
+
+
+
 export {
   index,
   choiceFood as choice,
+  newFood as new,
 }

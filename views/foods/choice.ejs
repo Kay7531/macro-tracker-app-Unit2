@@ -3,10 +3,12 @@
  <%- include('../partials/nav') %>
         <main>
             <div>
-            <a href="/foods/look">
+            <a href="/foods/look"  <%- title === "Look Up Food Item"%>
+                >
                 <button class="look" type="submit">Look Up Food Item</button>
             </a>
-            <a href="/foods/new">
+            <a href="/foods/new" <%- title === "Manually log Food Item"%>
+                >
                 <button class="manual" type="submit">Manually Log Food Item </button>
             </a>
         </div>
