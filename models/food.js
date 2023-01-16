@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const foodSchema = {
+const foodSchema = new Schema ({
     name: {
         type: String,
         required: true,
@@ -25,7 +25,9 @@ const foodSchema = {
     date: {
         type: Date,
     },
-}
+}, {
+    timestamps: true
+})
 
 const Food = mongoose.model('Food', foodSchema)
 

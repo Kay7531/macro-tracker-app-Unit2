@@ -9,6 +9,12 @@
   >
     ADD FOOD
   </a> 
+
+  <a 
+  href="/activity/new" <%- title === 'Add Activity' ? 'class="active"' : '' %>
+>
+  ADD ACTIVITY
+</a> 
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
