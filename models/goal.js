@@ -20,6 +20,8 @@ const goalSchema = new Schema({
         required: true,
     },
 
+},{
+    timestamps:true
 })
 
 const Goal = mongoose.model('Goal', goalSchema)
