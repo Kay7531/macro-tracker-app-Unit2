@@ -11,6 +11,8 @@ router.get('/', workoutsCtrl.index)
 router.post('/', workoutsCtrl.create)
 // GET localhost:3000/workouts/:id
 router.get('/:id', workoutsCtrl.show)
+//DELETE localhost:3000/workouts/:id
+router.delete('/:id', workoutsCtrl.delete)
 
 export {
   router
