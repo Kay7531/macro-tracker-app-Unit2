@@ -71,11 +71,27 @@ function edit(req, res) {
         res.redirect('/')
     })
 }
+
+function update(req, res) {
+    for(let key in req.body) {
+        if(req.body[key] === "") delete req.body[key]
+    }
+    Workout.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(workout => { 
+        res.redirect(`/workouts/${workout._id}`)
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/')
+    })
+}
+
 export {
     index,
     newWorkout as new,
     create,
     show,
     deleteWorkout as delete,
-    edit
+    edit,
+    update
 }
