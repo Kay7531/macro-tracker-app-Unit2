@@ -1,0 +1,38 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/workouts/index.css" />
+
+<%- include('../partials/nav') %>
+
+<main>
+ <h1>Daily Food Log</h1>
+ <table>
+    <thead>
+        <tr>
+            <th>Activity Name</th>
+            <th>Duration</th>
+            <th>Calories Lost</th>
+        </tr>
+    </thead>
+ 
+ <tbody>
+    <% workouts.forEach(workout => { %>
+    <tr>
+        <td><%= workout.name %></td>
+        <td><%= workout.duration %> min </td>
+        <td><%= workout.calsLost %> cal </td>
+      
+        <td><a href="/workouts/<%= workout._id %>">DETAILS</a></td>
+        <td>
+            <form 
+            action="/workouts/<%= workout._id %>?_method=DELETE"
+            method="POST">
+                <button>X</button>
+            </form>
+        </td>
+    </tr>
+    <% }) %>
+ </tbody>
+</table>
+</main>
+
+<%- include("../partials/footer") %>
