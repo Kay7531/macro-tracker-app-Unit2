@@ -1,0 +1,25 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/workouts/show.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>Activity Name: </div>
+    <div><%= workout.name %></div>
+    <div>Duration: </div>
+    <div><%= workout.duration %></div>
+    <div>Calories Lost: </div>
+    <div><%= workout.calsLost %></div>
+ 
+    <div>
+        <a href="/workouts/<%=workout._id%>/edit">
+            <button>Edit Workout</button>
+        </a>
+        <button onclick="window.location.href='/workouts/';">Go Back</button>
+    </div>
+
+  </section>
+</main>
+  
+<%- include('../partials/footer') %>
