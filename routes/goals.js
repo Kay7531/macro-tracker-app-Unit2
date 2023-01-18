@@ -12,6 +12,8 @@ router.post('/', goalsCtrl.create)
 router.get('/:id', goalsCtrl.show)
 //DELETE localhost:3000/goals/:id
 router.delete('/:id', goalsCtrl.delete)
+//GET localhost:3000/goals/:id/edit
+router.get('/:id/edit', goalsCtrl.edit)
 
 export {
     router
