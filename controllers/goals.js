@@ -56,10 +56,25 @@ function show(req, res) {
       })
 }
 
+function edit(req, res) {
+  Goal.findById(req.params.id)
+  .then(goal => {
+    res.render("goals/edit", {
+      movie, // same as: movie: movie
+      title: "Edit Goal"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export {
     index,
     newGoal as new,
     create,
     show,
     deleteGoal as delete,
+    edit
 }
