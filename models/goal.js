@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const goalSchema = new Schema({
-    netCarbsGoal:{
+    carbsGoal:{
         type: Number,
         required: true,
     },
