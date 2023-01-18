@@ -44,9 +44,22 @@ function show(req, res) {
       res.redirect("/")
     })
   }
+
+  function deleteGoal(req, res) {
+    Goal.findByIdAndDelete(req.params.id)
+    .then(goal => {
+        res.redirect('/goals')
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/goals")
+      })
+}
+
 export {
     index,
     newGoal as new,
     create,
     show,
+    deleteGoal as delete,
 }

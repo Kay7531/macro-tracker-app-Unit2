@@ -10,6 +10,8 @@ router.get('/new',goalsCtrl.new)
 router.post('/', goalsCtrl.create)
 //GET localhost:3000/goals/:id
 router.get('/:id', goalsCtrl.show)
+//DELETE localhost:3000/goals/:id
+router.delete('/:id', goalsCtrl.delete)
 
 export {
     router
