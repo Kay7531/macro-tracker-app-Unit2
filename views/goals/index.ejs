@@ -4,7 +4,7 @@
 <%- include('../partials/nav') %>
 
 <main>
- <h1>Daily Food Log</h1>
+ <h1>Daily Goals</h1>
  <table>
     <thead>
         <tr>
@@ -17,14 +17,14 @@
     </thead>
  
  <tbody>
-    <% foods.forEach(food => { %>
+    <% goals.forEach(goal => { %>
     <tr>
         <td><%= goal.carbsGoal %> g </td>
         <td><%= goal.proteinGoal %> g </td>
         <td><%= goal.fatsGoal %> g </td>
         <td><%= goal.calGoal %> cal </td>
       
-        <td><a href="/goalss/<%= goal._id %>">DETAILS</a></td>
+        <td><a href="/goals/<%= goal._id %>">DETAILS</a></td>
         <td>
             <form 
             action="/goals/<%= goal._id %>?_method=DELETE"

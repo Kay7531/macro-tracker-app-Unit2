@@ -1,5 +1,18 @@
 import { Goal } from "../models/goal.js"
 
+function index(req, res) {
+    Goal.find({})
+    .then(goals => {
+        res.render('goals/index', {
+            title: "Goals",
+            goals: goals
+        })
+    })
+    .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
 
 function newGoal(req, res) {
     res.render('goals/new', {
@@ -10,11 +23,11 @@ function newGoal(req, res) {
 function create(req, res) {
     Goal.create(req.body)
     .then(goal => {
-        res.redirect('/goals/')
+        res.redirect('/goals')
     })
     .catch(err => {
         console.log(err)
-        res.redirect('/goals/')
+        res.redirect('/goals')
     })
 
 }
@@ -32,6 +45,7 @@ function show(req, res) {
     })
   }
 export {
+    index,
     newGoal as new,
     create,
     show,
