@@ -60,7 +60,7 @@ function edit(req, res) {
   Goal.findById(req.params.id)
   .then(goal => {
     res.render("goals/edit", {
-      movie, // same as: movie: movie
+      goal, 
       title: "Edit Goal"
     })
   })
