@@ -1,0 +1,41 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/foods/index.css" />
+
+<%- include('../partials/nav') %>
+
+<main>
+ <h1>Daily Food Log</h1>
+ <table>
+    <thead>
+        <tr>
+            <th>Daily Carb Goal</th>
+            <th>Daily Protein Goal</th>
+            <th>Daily Fats </th>
+            <th>Daily Calorie Goal</th>
+          
+        </tr>
+    </thead>
+ 
+ <tbody>
+    <% foods.forEach(food => { %>
+    <tr>
+        <td><%= goal.carbsGoal %> g </td>
+        <td><%= goal.proteinGoal %> g </td>
+        <td><%= goal.fatsGoal %> g </td>
+        <td><%= goal.calGoal %> cal </td>
+      
+        <td><a href="/goalss/<%= goal._id %>">DETAILS</a></td>
+        <td>
+            <form 
+            action="/goals/<%= goal._id %>?_method=DELETE"
+            method="POST">
+                <button>X</button>
+            </form>
+        </td>
+    </tr>
+    <% }) %>
+ </tbody>
+</table>
+</main>
+
+<%- include("../partials/footer") %>

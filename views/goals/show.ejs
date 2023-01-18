@@ -18,8 +18,15 @@
         <a href="/goals/<%=goal._id%>/edit">
             <button>Edit Food</button>
         </a>
+        
         <button onclick="window.location.href='/goals/new';">Go Back</button>
     </div>
+    <form 
+        action="/goals/<%= goal._id %>?_method=DELETE" 
+        method="POST"
+    >
+        <button>X</button>
+    </form>
 
   </section>
 </main>
