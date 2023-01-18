@@ -4,7 +4,7 @@
 <main>
     <h1><%= title %></h1>
     <form id="new-form" 
-    action="/goals/<%=goal._id%>?_method=PUT" 
+    action="/goals/<%= goal._id %>?_method=PUT" 
     method="POST">
       <label for="carbsGoal-input">Daily carb goal:</label>
       <input type="text" name="carbsGoal" id="carbsGoal-input">

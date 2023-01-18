@@ -70,11 +70,26 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  for(let key in req.body) {
+    if(req.body[key] === "") delete req.body[key]
+}
+  Goal.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(goal => {
+    res.redirect(`/goals/${goal._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export {
     index,
     newGoal as new,
     create,
     show,
     deleteGoal as delete,
-    edit
+    edit,
+    update
 }
