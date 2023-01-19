@@ -6,6 +6,7 @@
   <nav>
     <div id="logos"> myDietFriend</div>
     
+  
     <a 
     href="/goals/new" <%- title === 'Goals' ? 'class="active"' : '' %>
   >
@@ -27,7 +28,7 @@
 </a> 
     <% if (user) { %>
       <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
+        <button type="submit" id="logout">Logout</button>
       </a>
     <% } else { %>
       <div 
@@ -60,5 +61,5 @@
         </div>
       <% } %>
       </div>
-   
+  
   </nav>
