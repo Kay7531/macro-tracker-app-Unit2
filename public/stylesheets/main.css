@@ -134,6 +134,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 100px;
+  margin-top: 150px;
 }
 
 #logout{
@@ -145,3 +146,11 @@ nav {
   width: 60px;
 }
 
+
+#interest{
+  max-width: 300px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: lighter;
+
+}
