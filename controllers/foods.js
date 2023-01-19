@@ -25,6 +25,7 @@ function newFood(req, res) {
     })
   }
 function create(req, res) {
+    req.body.owner = req.user.profile._id
     Food.create(req.body)
     .then(food => {
         res.redirect('/foods')

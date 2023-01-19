@@ -16,6 +16,7 @@ const workoutSchema = new Schema({
     date: {
         type: Date,
     },
+    owner: {type: Schema.Types.ObjectId, ref: "Profile"},
 },{
     timestamps:true
 })

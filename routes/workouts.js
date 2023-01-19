@@ -1,8 +1,12 @@
 import { Router } from 'express'
 import * as workoutsCtrl from '../controllers/workouts.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
+
+//POST localhost:3000/workouts
+router.post('/', isLoggedIn, workoutsCtrl.create)
 //GET localhost:3000/workouts/new
 router.get('/new', workoutsCtrl.new)
 //GET localhost:3000/workouts

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { Food } from '../models/food.js'
 
 const Schema = mongoose.Schema
 

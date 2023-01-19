@@ -19,6 +19,7 @@ const goalSchema = new Schema({
         type: Number,
         
     },
+    owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 
 },{
     timestamps:true
