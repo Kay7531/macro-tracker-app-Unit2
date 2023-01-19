@@ -2,17 +2,31 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>Macro-Tracker</h1>
-  <div></div>
-  <h2>hello, <%= user ? user.profile.name : "friend" %></h2>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+  <section class="usermsg">
+<div id="msg">
+  <h1> Take charge of your health.  </h1>
+  <h3>Be in tune with your wellness.Track your meals and workouts. </h3> 
+</div>
+
+  
+ <div id="mainImg">
+  <img src="https://t4.ftcdn.net/jpg/01/76/31/63/360_F_176316329_zAEAUMO2F4AynukDyuZxw621dPISub5j.jpg"  alt="acai bowl">
+ </div>
+</section>
+
+  <div> <img src="https://assets.bonappetit.com/photos/5942f532adb3b53bd37a7c60/4:3/w_3331,h_2498,c_limit/steak-with-tangy-sauce-and-watercress-salad.jpg" alt="steak-salad" id="sub-head">
+  
+  </div>
+  <div>
+    <img src="https://www.news-medical.net/images/Article_Images/ImageForArticle_22980_16600577310868068.jpg" alt="running" id="sub-head">
+  </div>
+  
+  <div> 
+    <img src="https://imageio.forbes.com/specials-images/imageserve/60119d49a308829b6f06c92d/2021-Goal--Plan--Action-Text-on-Notepad-New-Year-Concept/960x0.jpg?format=jpg&width=960" alt="goal-img" id="sub-head">
+  </div>
+
+</section>
+ 
 </main>
 
 <%- include('./partials/footer') %>

@@ -4,21 +4,26 @@
 </head>
 <body>
   <nav>
+    <div id="logos"> myDietFriend</div>
+    
     <a 
     href="/goals/new" <%- title === 'Goals' ? 'class="active"' : '' %>
   >
-    GOALS
+  <i class="fas fa-trophy"></i>
+    Goals
   </a> 
     <a 
     href="/foods/choice" <%- title === 'Add Foods' ? 'class="active"' : '' %>
   >
-    ADD FOOD
+  <i class="fas fa-utensils"></i>
+    Add Meals
   </a> 
 
   <a 
   href="/workouts/new" <%- title === 'Add Workout' ? 'class="active"' : '' %>
 >
-  ADD ACTIVITY
+<i class="fas fa-running"></i>
+  Add Activity
 </a> 
     <% if (user) { %>
       <a href="/auth/logout" class="right">
@@ -41,4 +46,19 @@
         data-logo_alignment="left"
       ></div>
     <% } %>
+
+    <div id="avatar">
+
+      <p>hello, <%= user ? user.profile.name : "friend" %></p>
+      <% if (user?.profile.avatar) { %>
+        <div id="pic">
+          <img
+            src="<%= user.profile.avatar %>"
+            alt="<%= user.profile.name %>"
+            class="profile"
+          />
+        </div>
+      <% } %>
+      </div>
+   
   </nav>

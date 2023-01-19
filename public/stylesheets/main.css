@@ -14,7 +14,7 @@ html {
   }
   
   body {
-    background-color: lightpink;
+    background-color: white;
     /* Use a system font, if none are available use an available sans-sarif font */
     margin: 0;
     color: #424748;
@@ -32,50 +32,104 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: lightskyblue;
+    background-color: white;
     padding: 20px;
+    
   }
   
   body > main h1:first-child {
     margin-bottom: 50px;
   }
   
-  body > nav {
-    grid-area: nav;
-    background-color: powderblue;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 20px 0 30px;
-  }
+ 
+
+body > nav {
+  grid-area: nav;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px; 
   
-  nav > i {
-    width: 34px;
-    object-fit: contain;
-    margin-right: auto;
+}
+
+
+nav > i {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #424748;
+}
+
+nav > a:visited {
+  color: #424748;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: rgb(53, 162, 53);
+}
+
+nav > a.active {
+  color: white;
+}
+
+.fas::before {
+  font-family: "Font Awesome 5 Free";
+}
+
+.profile {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+#avatar {
+  display: flex;
+  flex-direction: row;
+
+}
+#pic {
+  padding: 12px;
+}
+
+h1{
+  font-size: 70px;
+}
+
+nav {
+  border-bottom: 1px solid gray;
+}
+
+#logos {
+  padding-left: 0px;
+  font-family: 'Bowlby One', cursive;
+  color: rgb(114, 13, 114);
+  font-size: x-large;
+}
+
+#sub-head {
+  height:100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.usermsg {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
-  
-  nav > a {
-    margin: 20px;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    color: #424748;
-  }
-  
-  nav > a:visited {
-    color: #424748;
-  }
-  
-  nav > a:hover {
-    color: white;
-    background-color: blueviolet;
-  }
-  
-  nav > a.active {
-    color: white;
-  }
-  
-  .fas::before {
-    font-family: "Font Awesome 5 Free";
-  }
+}
