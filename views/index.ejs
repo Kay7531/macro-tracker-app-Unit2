@@ -6,6 +6,27 @@
 <div id="msg">
   <h1> Take charge of your health.  </h1>
   <h3>Be in tune with your wellness.Track your meals and workouts. </h3> 
+  <% if (user) { %>
+    <a href="/auth/logout" class="right">
+      <button type="submit" id="logout">Logout</button>
+    </a>
+  <% } else { %>
+    <div 
+      id="g_id_onload"
+      data-client_id="<%= googleClientID %>"
+      data-login_uri="/auth/google"
+      data-auto_prompt="false"
+    ></div>
+    <div 
+      class="g_id_signin right"
+      data-type="standard"
+      data-size="large"
+      data-theme="filled_blue"
+      data-text="signin_with"
+      data-shape="pill"
+      data-logo_alignment="left"
+    ></div>
+  <% } %>
 </div>
  <div id="mainImg">
   <img src="https://t4.ftcdn.net/jpg/01/76/31/63/360_F_176316329_zAEAUMO2F4AynukDyuZxw621dPISub5j.jpg"  alt="acai bowl">
@@ -16,7 +37,7 @@
   <div id="interest"> 
   <img src="https://assets.bonappetit.com/photos/5942f532adb3b53bd37a7c60/4:3/w_3331,h_2498,c_limit/steak-with-tangy-sauce-and-watercress-salad.jpg" alt="steak-salad" id="sub-head">
   <h2>Track your meals. </h2>
-  <h3>A food diary helps you candidly evaluate your eating habits and make improvements. </h3>
+  <h3>A food diary helps you candidly evaluate your eating habits and make improvements. </h>
   </div>
   
   <div id="interest">

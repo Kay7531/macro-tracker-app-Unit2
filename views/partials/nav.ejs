@@ -4,53 +4,37 @@
 </head>
 <body>
   <nav>
-    <div id="logos"> myDietFriend</div>
+    <a href="/">
+    <div id="logos"> 
+      myDietFriend
+    </div>
+  </a>
     
   
     <a 
-    href="/goals/new" <%- title === 'Goals' ? 'class="active"' : '' %>
+    href="/goals/new" id="tab" <%- title === 'Goals' ? 'class="active"' : '' %>
   >
   <i class="fas fa-trophy"></i>
     Goals
   </a> 
     <a 
-    href="/foods/choice" <%- title === 'Add Foods' ? 'class="active"' : '' %>
+    href="/foods/choice" id="tab"  <%- title === 'Add Foods' ? 'class="active"' : '' %>
   >
   <i class="fas fa-utensils"></i>
     Meals
   </a> 
 
   <a 
-  href="/workouts/new" <%- title === 'Add Workout' ? 'class="active"' : '' %>
+  href="/workouts/new" id="tab" <%- title === 'Add Workout' ? 'class="active"' : '' %>
 >
 <i class="fas fa-running"></i>
   Activity
-</a> 
-    <% if (user) { %>
-      <a href="/auth/logout" class="right">
-        <button type="submit" id="logout">Logout</button>
-      </a>
-    <% } else { %>
-      <div 
-        id="g_id_onload"
-        data-client_id="<%= googleClientID %>"
-        data-login_uri="/auth/google"
-        data-auto_prompt="false"
-      ></div>
-      <div 
-        class="g_id_signin right"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left"
-      ></div>
-    <% } %>
 
+</a> 
+ 
     <div id="avatar">
 
-      <p>hello, <%= user ? user.profile.name : "friend" %></p>
+      <p>Hello, <%= user ? user.profile.name : "friend" %></p>
       <% if (user?.profile.avatar) { %>
         <div id="pic">
           <img
