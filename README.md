@@ -23,6 +23,12 @@
 * fly.io
 * Google OAuth
 
+## Credits 🙌
+* [myfitnesspal] (https://www.myfitnesspal.com/)
+* [nutritionix] (https://www.nutritionix.com/business/api)
+* [Canva] (https://www.canva.com/)
+
+
 ## Next steps🧊
 - [ ] AAU I will be able to better view my  progress on a tracker that implements a data visualization tool. The tracker references my goals, meals, and workout inputs.
 - [ ] Use 3rd party API (potentially Nutritionx API) to allow user to simply look up macros of food items by inputting food name and serving size or even scanning barcode instead of manually logging the protein, fats, and carbs.
