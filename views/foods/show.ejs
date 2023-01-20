@@ -18,10 +18,13 @@
     <div>Total Calories: </div>
     <div><%= food.totalCal %></div>
     <div>
+
+      <div>
         <a href="/foods/<%=food._id%>/edit">
             <button>Edit Food</button>
         </a>
         <button onclick="window.location.href='/foods';">Go Back</button>
+      </div>
     </div>
 
   </section>

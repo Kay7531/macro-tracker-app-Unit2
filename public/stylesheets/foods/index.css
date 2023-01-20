@@ -33,3 +33,10 @@ table {
   #list a:hover {
     background-color: white;
   }
+
+  button {
+    border-radius: 50%;
+    background-color: purple;
+    color: white;
+    font-weight: bolder;
+  }

@@ -1,21 +1,28 @@
+
+
 <%- include('../partials/html-head') %>
-    <link rel="stylesheet" href="/stylesheets/foods/choice.css" />
+
+<link rel="stylesheet" href="/stylesheets/foods/choice.css" />
+
+    
  <%- include('../partials/nav') %>
+
         <main>
             <div>
-            <a href="/foods/look"  <%- title === "Look Up Food Item"%>
-                >
-                <button class="look" type="submit">
+            <a href="/foods/look" id="lookup" class="choice "<%- title === "Look Up Food Item"%>
+                >   
+                <i class="fas fa-search" id="hey"></i>
                     Look Up Food Item 
-                    <i class="fas fa-search"></i>
-                </button>
+                    
+                
             </a>
-            <a href="/foods/new" <%- title === "Manually log Food Item"%>
+            <a href="/foods/new" id="manual" class="choice" <%- title === "Manually log Food Item"%>
                 >
-                <button class="manual" type="submit">
+                
+                <i class="fas fa-clipboard-list" id="hey"></i>
                     Manually Log Food Item
-                    <i class="fas fa-clipboard-list"></i>
-             </button>
+                   
+             
             </a>
         </div>
         </main>
