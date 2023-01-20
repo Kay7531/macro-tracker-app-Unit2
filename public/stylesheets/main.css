@@ -115,6 +115,8 @@ nav {
   font-family: 'Bowlby One', cursive;
   color: rgb(114, 13, 114);
   font-size: x-large;
+  display: flex;
+  flex-direction: row;
 }
 
 #sub-head {
