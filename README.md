@@ -24,9 +24,9 @@
 * Google OAuth
 
 ## Credits 🙌
-* [myfitnesspal] (https://www.myfitnesspal.com/)
-* [nutritionix] (https://www.nutritionix.com/business/api)
-* [Canva] (https://www.canva.com/)
+* [myfitnesspal](https://www.myfitnesspal.com/)
+* [nutritionix](https://www.nutritionix.com/business/api)
+* [Canva](https://www.canva.com/)
 
 
 ## Next steps🧊
