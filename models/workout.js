@@ -16,9 +16,9 @@ const workoutSchema = new Schema({
     date: {
         type: Date,
     },
-    owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-},{
-    timestamps:true
+    owner: { type: Schema.Types.ObjectId, ref: "Profile" },
+}, {
+    timestamps: true
 })
 
 const Workout = mongoose.model('Workout', workoutSchema)
@@ -26,3 +26,4 @@ const Workout = mongoose.model('Workout', workoutSchema)
 export {
     Workout
 }
+

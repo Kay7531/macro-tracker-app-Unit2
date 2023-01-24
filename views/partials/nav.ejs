@@ -1,51 +1,46 @@
-  <% if (!user) { %>
-    <script defer src="https://accounts.google.com/gsi/client"></script>
+<% if (!user) { %>
+  <script defer src="https://accounts.google.com/gsi/client"></script>
   <% } %>
-</head>
-<body>
-  <nav>
-    <a href="/">
-    
-    <div id="logos"> 
-      <img src="assets/dietfriend logo.png" alt="" style="width:32px;height: 32px;">
-      myDietFriend
-    </div>
-  </a>
-    
-  
-    <a 
-    href="/goals/new" id="tab" <%- title === 'Goals' ? 'class="active"' : '' %>
-  >
-  <i class="fas fa-trophy"></i>
-    Goals
-  </a> 
-    <a 
-    href="/foods/choice" id="tab"  <%- title === 'Add Foods' ? 'class="active"' : '' %>
-  >
-  <i class="fas fa-utensils"></i>
-    Meals
-  </a> 
+    </head>
 
-  <a 
-  href="/workouts/new" id="tab" <%- title === 'Add Workout' ? 'class="active"' : '' %>
->
-<i class="fas fa-running"></i>
-  Activity
+    <body>
+      <nav>
+        <a href="/">
 
-</a> 
- 
-    <div id="avatar">
+          <div id="logos">
+            <img src="assets/dietfriend logo.png" alt="" style="width:32px;height: 32px;">
+            myDietFriend
+          </div>
+        </a>
 
-      <p>Hello, <%= user ? user.profile.name : "friend" %></p>
-      <% if (user?.profile.avatar) { %>
-        <div id="pic">
-          <img
-            src="<%= user.profile.avatar %>"
-            alt="<%= user.profile.name %>"
-            class="profile"
-          />
+
+        <a href="/goals/new" id="tab" <%- title==='Goals' ? 'class="active"' : '' %>
+          >
+          <i class="fas fa-trophy"></i>
+          Goals
+        </a>
+        <a href="/foods/choice" id="tab" <%- title==='Add Foods' ? 'class="active"' : '' %>
+          >
+          <i class="fas fa-utensils"></i>
+          Meals
+        </a>
+
+        <a href="/workouts/new" id="tab" <%- title==='Add Workout' ? 'class="active"' : '' %>
+          >
+          <i class="fas fa-running"></i>
+          Activity
+
+        </a>
+
+        <div id="avatar">
+
+          <p>Hello, <%= user ? user.profile.name : "friend" %>
+          </p>
+          <% if (user?.profile.avatar) { %>
+            <div id="pic">
+              <img src="<%= user.profile.avatar %>" alt="<%= user.profile.name %>" class="profile" />
+            </div>
+            <% } %>
         </div>
-      <% } %>
-      </div>
-  
-  </nav>
+
+      </nav>

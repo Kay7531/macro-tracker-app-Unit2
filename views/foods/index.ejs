@@ -1,43 +1,57 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/foods/index.css" />
+    <link rel="stylesheet" href="/stylesheets/foods/index.css" />
 
-<%- include('../partials/nav') %>
+    <%- include('../partials/nav') %>
 
-<main>
- <h1>Daily Food Log</h1>
- <table>
-    <thead>
-        <tr>
-            <th>Item Name</th>
-            <th>Carbs</th>
-            <th>Protien</th>
-            <th>Fat</th>
-            <th>Serving</th>
-            <th>Total Calories</th>
-        </tr>
-    </thead>
- 
- <tbody>
-    <% foods.forEach(food => { %>
-    <tr>
-        <td><%= food.name %></td>
-        <td><%= food.netCarbs %> g </td>
-        <td><%= food.protein %> g </td>
-        <td><%= food.fat %> g </td>
-        <td><%= food.serving %></td>
-        <td><%= food.totalCal %> cals</td>
-        <td><a href="/foods/<%= food._id %>">DETAILS</a></td>
-        <td>
-            <form 
-            action="/foods/<%= food._id %>?_method=DELETE"
-            method="POST">
-                <button>X</button>
-            </form>
-        </td>
-    </tr>
-    <% }) %>
- </tbody>
-</table>
-</main>
+        <main>
+            <h1>Daily Food Log</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Carbs</th>
+                        <th>Protien</th>
+                        <th>Fat</th>
+                        <th>Serving</th>
+                        <th>Total Calories</th>
+                    </tr>
+                </thead>
 
-<%- include("../partials/footer") %>
+                <tbody>
+                    <% foods.forEach(food=> { %>
+                        <tr>
+                            <td>
+                                <%= food.name %>
+                            </td>
+                            <td>
+                                <%= food.netCarbs %> g
+                            </td>
+                            <td>
+                                <%= food.protein %> g
+                            </td>
+                            <td>
+                                <%= food.fat %> g
+                            </td>
+                            <td>
+                                <%= food.serving %>
+                            </td>
+                            <td>
+                                <%= food.totalCal %> cals
+                            </td>
+                            <td><a href="/foods/<%= food._id %>">DETAILS</a></td>
+
+                            <!-- <%# if (food.owner.equals(user?.profile._id)) { %>
+                                <td>
+                                    <form action="/foods/<%#food._id %>?_method=DELETE" method="POST">
+                                        <button>X</button>
+                                    </form>
+                                </td>
+                                <%# } %> -->
+
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </main>
+
+        <%- include("../partials/footer") %>

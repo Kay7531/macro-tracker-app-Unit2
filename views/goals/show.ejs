@@ -1,29 +1,41 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/foods/show.css" />
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/foods/show.css" />
+  <%- include('../partials/nav') %>
 
-<main>
-  <h1><%= title %></h1>
-  <section>
-    <div>Daily Carb Goal: </div>
-    <div><%= goal.carbsGoal %></div>
-    <div>Daily Protien Goal: </div>
-    <div><%= goal.proteinGoal %></div>
-    <div>Daily Fats Goal: </div>
-    <div><%= goal.fatsGoal %></div>
-    <div> Daily Calories Goal: </div>
-    <div><%= goal.calGoal %></div>
- 
-    <div id="ops">
-        <a href="/goals/<%=goal._id%>/edit">
-            <button>Edit Goal</button>
-        </a>
-        
-        <button onclick="window.location.href='/goals';">Go Back</button>
-    </div>
+    <main>
+      <h1>
+        <%= title %>
+      </h1>
+      <section>
+        <div>Daily Carb Goal: </div>
+        <div>
+          <%= goal.carbsGoal %>
+        </div>
+        <div>Daily Protien Goal: </div>
+        <div>
+          <%= goal.proteinGoal %>
+        </div>
+        <div>Daily Fats Goal: </div>
+        <div>
+          <%= goal.fatsGoal %>
+        </div>
+        <div> Daily Calories Goal: </div>
+        <div>
+          <%= goal.calGoal %>
+        </div>
+
+        <div id="ops">
+          <% if (goal.owner.equals(user?.profile._id)) { %>
+            <a href="/goals/<%=goal._id%>/edit">
+              <button>Edit Goal</button>
+            </a>
+            <% } %>
+
+              <button onclick="window.location.href='/goals';">Go Back</button>
+        </div>
 
 
-  </section>
-</main>
-  
-<%- include('../partials/footer') %>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>

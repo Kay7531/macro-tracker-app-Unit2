@@ -1,27 +1,27 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/goals/new.css" />
-<%- include('../partials/nav') %>
-<main>
-    <h1><%= title %></h1>
-    <form id="new-form" 
-    action="/goals/<%= goal._id %>?_method=PUT" 
-    method="POST">
-      <label for="carbsGoal-input">Daily carb goal:</label>
-      <input type="text" name="carbsGoal" id="carbsGoal-input">
-      <label for="proteinGoal-input">Daily protein goal:</label>
-      <input type="text" name="proteinGoal" id="protienGoal-input">
-     
-      <label for="fatsGoal-input">Daily fats goal:</label>
-      <input type="text" name="fatsGoal" id="fatsGoal-input">
-      
-      <label for="calGoal-input">Daily calories goal:</label>
-      <input type="text" name="calGoal" id="calGoal-input">
+  <link rel="stylesheet" href="/stylesheets/goals/new.css" />
+  <%- include('../partials/nav') %>
+    <main>
+      <h1>
+        <%= title %>
+      </h1>
+      <form id="new-form" action="/goals/<%= goal._id %>?_method=PUT" method="POST">
+        <label for="carbsGoal-input">Daily carb goal:</label>
+        <input type="text" name="carbsGoal" id="carbsGoal-input">
+        <label for="proteinGoal-input">Daily protein goal:</label>
+        <input type="text" name="proteinGoal" id="protienGoal-input">
 
-    
-      <button type="submit">Save Goal</button>
-      <button onclick="window.location.href='/goals/show';">Go Back</button>
-     
-    </form>
-  </main>
+        <label for="fatsGoal-input">Daily fats goal:</label>
+        <input type="text" name="fatsGoal" id="fatsGoal-input">
 
-<%- include("../partials/footer") %>
+        <label for="calGoal-input">Daily calories goal:</label>
+        <input type="text" name="calGoal" id="calGoal-input">
+
+
+        <button type="submit">Save Goal</button>
+        <button onclick="window.location.href='/goals/show';">Go Back</button>
+
+      </form>
+    </main>
+
+    <%- include("../partials/footer") %>

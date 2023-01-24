@@ -1,5 +1,4 @@
-
-main{
+main {
     margin-top: 150px;
 }
 
@@ -8,10 +7,10 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap:500px;
+    gap: 500px;
     font-size: 40px;
-    
-    
+
+
 }
 
 .choice {
@@ -22,10 +21,10 @@ div {
 }
 
 #hey {
-   font-size: 100px;
+    font-size: 100px;
 }
 
-a > #lookup:hover {
+a>#lookup:hover {
     background-color: green;
     color: white;
     border-radius: 50%;

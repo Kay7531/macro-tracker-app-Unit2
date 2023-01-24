@@ -1,20 +1,20 @@
 import { Workout } from "../models/workout.js";
 function index(req, res) {
     Workout.find({})
-    .then(workouts => {
-        res.render('workouts/index', {
-            title: "All Workouts",
-            workouts: workouts
+        .then(workouts => {
+            res.render('workouts/index', {
+                title: "All Workouts",
+                workouts: workouts
+            })
         })
-    })
-    .catch(err => {
-        console.log(err)
-        res.redirect("/")
-      })
-    }
+        .catch(err => {
+            console.log(err)
+            res.redirect("/")
+        })
+}
 
 
-function newWorkout(req, res)  {
+function newWorkout(req, res) {
     res.render('workouts/new', {
         title: 'Add Workout',
     })
@@ -23,68 +23,82 @@ function newWorkout(req, res)  {
 function create(req, res) {
     req.body.owner = req.user.profile._id
     Workout.create(req.body)
-    .then(workout => {
-        res.redirect('/workouts/')
-    })
-    .catch(err => {
-        console.log(err)
-        res.redirect('/workouts/')
-    })
+        .then(workout => {
+            res.redirect('/workouts/')
+        })
+        .catch(err => {
+            console.log(err)
+            res.redirect('/workouts/')
+        })
 }
 
 function show(req, res) {
     Workout.findById(req.params.id)
-    .then(workout => {
-       res.render('workouts/show', {
-        title: 'Workout Detail',
-        workout:workout
-       })
-    })
-    .catch(err => {
-        console.log(err)
-        res.redirect("/")
-      })
-    
+        .populate('owner')
+        .then(workout => {
+            res.render('workouts/show', {
+                title: 'Workout Detail',
+                workout: workout
+            })
+        })
+        .catch(err => {
+            console.log(err)
+            res.redirect("/")
+        })
+
 }
 
 
 function deleteWorkout(req, res) {
-    Workout.findByIdAndDelete(req.params.id)
-    .then(workout => {
-        res.redirect('/workouts')
-    })
-    .catch(err => {
-        console.log(err)
-        res.redirect('/workouts')
-    })
+    Workout.findById(req.params.id)
+        .then(workout => {
+            if (workout.owner.equals(req.user.profile._id)) {
+                workout.delete()
+                    .then(() => {
+                        res.redirect('/workouts')
+                    })
+            } else {
+                throw new Error('🚫 Not authorized 🚫')
+            }
+
+        })
+        .catch(err => {
+            console.log(err)
+            res.redirect("/workout")
+        })
 }
 
 function edit(req, res) {
     Workout.findById(req.params.id)
-    .then(workout => {
-        res.render('workouts/edit', {
-            workout,
-            title: 'Edit Workout'
+        .then(workout => {
+            res.render('workouts/edit', {
+                workout,
+                title: 'Edit Workout'
+            })
         })
-    })
-    .catch(err => {
-        console.log(err)
-        res.redirect('/')
-    })
+        .catch(err => {
+            console.log(err)
+            res.redirect('/')
+        })
 }
 
 function update(req, res) {
-    for(let key in req.body) {
-        if(req.body[key] === "") delete req.body[key]
-    }
-    Workout.findByIdAndUpdate(req.params.id, req.body, {new: true})
-    .then(workout => { 
-        res.redirect(`/workouts/${workout._id}`)
-    })
-    .catch(err => {
-        console.log(err)
-        res.redirect('/')
-    })
+    Workout.findById(req.params.id)
+        .then(workout => {
+            if (workout.owner.equals(req.user.profile._id)) {
+                workout.updateOne(req.body)
+                    .then(() => {
+                        res.redirect(`/workouts/${workout._id}`)
+                    })
+            } else {
+                throw new Error('🚫 Not authorized 🚫')
+            }
+
+        })
+        .catch(err => {
+            console.log(err)
+            res.redirect("/")
+        })
 }
 
 export {
@@ -96,3 +110,4 @@ export {
     edit,
     update
 }
+
